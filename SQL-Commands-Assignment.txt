@@ -1,0 +1,158 @@
+﻿Assignment Name: SQL Commands Assignment
+Resources:
+
+
+employees: id, name, age, salary, department_id
+departments: id, name, manager
+
+
+
+
+1. To select all columns and rows from the employees table:
+
+
+SQL QUERY:
+
+
+SELECT * FROM employees;
+
+
+Explanation:
+
+
+This command retrieves all columns and rows from the employees table.
+
+
+2. To select only the name and salary columns of all employees with a salary greater than 50000:
+
+
+SQL QUERY:
+
+
+SELECT name, salary FROM employees WHERE salary > 50000;
+
+
+Explanation:
+
+
+This command selects the name and salary columns from the employees table for those employees whose salary is greater than 50000.
+
+
+3. To calculate the average salary of all employees:
+
+
+SQL QUERY:
+
+
+SELECT AVG(salary) FROM employees;
+
+
+Explanation:
+
+
+This command calculates the average salary of all employees.
+
+
+4. To count the number of employees who work in the "Marketing" department:
+
+
+SQL QUERY:
+
+
+SELECT COUNT(*) FROM employees WHERE department_id = (SELECT id FROM departments WHERE name = 'Marketing');
+
+
+Explanation:
+
+
+This command counts the number of employees in the employees table whose department_id matches the id of the Marketing department in the departments table.
+
+
+5. To update the salary column of the employee with an id of 1001 to 60000:
+
+
+SQL QUERY:
+
+
+UPDATE employees SET salary = 60000 WHERE id = 1001;
+
+
+Explanation:
+
+
+This command updates the salary column of the employee with an id of 1001 to 60000.
+
+
+6. To delete all employees whose salary is less than 30000:
+
+
+SQL QUERY:
+
+
+DELETE FROM employees WHERE salary < 30000;
+
+
+Explanation:
+
+
+This command deletes all employees from the employees table whose salary is less than 30000.
+
+
+7. To select all columns and rows from the departments table:
+
+
+SQL QUERY:
+
+
+SELECT * FROM departments;
+
+
+Explanation:
+
+
+This command retrieves all columns and rows from the departments table.
+
+
+8. To select only the name and manager columns of the "Finance" department:
+
+
+SQL QUERY:
+
+
+SELECT name, manager FROM departments WHERE name = 'Finance';
+
+
+Explanation:
+
+
+This command selects the name and manager columns from the departments table for the Finance department.
+
+
+9. To calculate the total number of employees in each department:
+
+
+SQL QUERY:
+
+
+SELECT departments.name, COUNT(*) FROM employees JOIN departments ON employees.department_id = departments.id GROUP BY departments.name;
+
+
+Explanation:
+
+
+This command joins the employees and departments tables on the department_id and id columns, respectively, and groups the result by department name, counting the number of employees in each department.
+
+
+10. To insert a new department called "Research" with a manager named "John Doe":
+
+
+SQL QUERY:
+
+
+INSERT INTO departments (name, manager) VALUES ('Research', 'John Doe');
+
+
+Explanation:
+
+
+This command inserts a new row into the departments table with the name "Research" and manager "John Doe".
